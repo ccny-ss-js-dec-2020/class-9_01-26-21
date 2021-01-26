@@ -32,6 +32,18 @@ inquirer.prompt([
 			name: "table"
 		}
 	]).then(function(answers){
+		/*
+			Once the user is done answering the first round of questions,
+			everything that you need to do with the answers
+			to those questions will go in between
+			the opening curly bracket after (answers) right above
+			and before its closing "})"
+
+			In more technical terms,
+			once inquirier has finished,
+			then all the code will go in the callback.
+			The callback being .then(function(answers){}
+		*/
 		// If the user chooses "Country People"
 		if(answers.table === "Country People"){
 			/*
@@ -55,6 +67,18 @@ inquirer.prompt([
 				}
 			]).then(function(answers){
 				/*
+					Once the user is done answering the second round of questions,
+					everything that you need to do with the answers
+					to those questions will go in between
+					the opening curly bracket after (answers) right above
+					and before its closing "})"
+
+					In more technical terms,
+					once inquirier has finished,
+					then all the code will go in the callback.
+					The callback being .then(function(answers){}
+				*/
+				/*
 					after the user has input all the values, then do the insert into the 'country_people' table
 				*/
 				//storing all of my answers in variables
@@ -62,6 +86,11 @@ inquirer.prompt([
 				const countryOfOrigin = answers.country_of_origin;
 				const primaryLanguage = answers.primary_language;
 
+				/*
+					The logic for once the information is inserted into the database
+					goes in the callback from the .query function
+					.query('query', function(err, result) { logic for once inserted into database goes here })
+				*/
 				// inserting the users input answers into the sql query string starting with INSERT INTO
 				databaseConnection.query("INSERT INTO country_people (name, country_of_origin, primary_language) VALUES ('"+name+"','"+countryOfOrigin+"','"+primaryLanguage+"')", function(err, result) {
 					if(err){
@@ -96,12 +125,29 @@ inquirer.prompt([
 				}
 			]).then(function(answers){
 				/*
+					Once the user is done answering the second round of questions,
+					everything that you need to do with the answers
+					to those questions will go in between
+					the opening curly bracket after (answers) right above
+					and before its closing "})"
+
+					In more technical terms,
+					once inquirier has finished,
+					then all the code will go in the callback.
+					The callback being .then(function(answers){}
+				*/
+				/*
 					after the user has input all the values, then do the insert into the 'students' table
 				*/
 				//storing all of my answers in variables
 				const name = answers.name;
 				const age = answers.age;
 
+				/*
+					The logic for once the information is inserted into the database
+					goes in the callback from the .query function
+					.query('query', function(err, result) { logic for once inserted into database goes here })
+				*/
 				// inserting the users input answers into the sql query string starting with INSERT INTO
 				databaseConnection.query("INSERT INTO students (name, age) VALUES ('"+name+"','"+age+"')", function(err, result) {
 					if(err){
