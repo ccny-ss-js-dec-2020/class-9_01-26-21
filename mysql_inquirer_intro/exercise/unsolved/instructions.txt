@@ -5,4 +5,4 @@ Using the inquirer and mysql Modules:
 1. You will use inquirer to prompt which table you would like to view the records for
 2. After you choose which table, you will give the user a choice if they want to see all of the records or the last record added
 3. If they choose to see all the records, log all of the records
-4. If they choose to see the last record added, log the last record added
+4. If they choose to see the last record added, log the last record added (you will need to do additional logic in the javascript here)

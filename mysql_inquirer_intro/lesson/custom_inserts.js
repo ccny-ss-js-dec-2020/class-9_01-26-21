@@ -40,7 +40,7 @@ inquirer.prompt([
 			and before its closing "})"
 
 			In more technical terms,
-			once inquirier has finished,
+			once inquirer has finished,
 			then all the code will go in the callback.
 			The callback being .then(function(answers){}
 		*/
@@ -92,7 +92,9 @@ inquirer.prompt([
 					.query('query', function(err, result) { logic for once inserted into database goes here })
 				*/
 				// inserting the users input answers into the sql query string starting with INSERT INTO
-				databaseConnection.query("INSERT INTO country_people (name, country_of_origin, primary_language) VALUES ('"+name+"','"+countryOfOrigin+"','"+primaryLanguage+"')", function(err, result) {
+				const insertCountryPeopleQuery = "INSERT INTO country_people (name, country_of_origin, primary_language) VALUES ('"+name+"','"+countryOfOrigin+"','"+primaryLanguage+"')"
+				console.log(insertCountryPeopleQuery);
+				databaseConnection.query(insertCountryPeopleQuery, function(err, result) {
 					if(err){
 						//if there was an error when calling the database
 						//then logging the error
@@ -149,7 +151,10 @@ inquirer.prompt([
 					.query('query', function(err, result) { logic for once inserted into database goes here })
 				*/
 				// inserting the users input answers into the sql query string starting with INSERT INTO
-				databaseConnection.query("INSERT INTO students (name, age) VALUES ('"+name+"','"+age+"')", function(err, result) {
+				// as you can see, age is not wrapped around single quotes because it is an integer datatype, which sql accepts with or without single quotes
+				const insertIntoStudentsTableQuery = "INSERT INTO students (name, age) VALUES ('"+name+"',"+age+")";
+				console.log(insertIntoStudentsTableQuery);
+				databaseConnection.query(insertIntoStudentsTableQuery, function(err, result) {
 					if(err){
 						//if there was an error when calling the database
 						//then logging the error

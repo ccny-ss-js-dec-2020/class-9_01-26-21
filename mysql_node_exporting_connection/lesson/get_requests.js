@@ -5,7 +5,7 @@
   We are exporting a function, so that is why when I import it, i have the
   opening and closing parentheses on the end there.
 */
-var databaseConnection = require("./database_connection.js")();
+var databaseConnection = require("./database_connection.js");
 
 /* Querying the students table from the first_sql database */
 databaseConnection.query("SELECT * FROM students", function(err, res){
