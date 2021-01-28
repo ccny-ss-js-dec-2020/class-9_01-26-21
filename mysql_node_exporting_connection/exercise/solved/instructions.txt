@@ -1,0 +1,11 @@
+1. Export the database connection using a database credentials object
+   Object meaning:
+   {
+     	user: 'root',
+     	password: '',
+     	database: 'first_sql',
+     	host: 'localhost',
+     	port: 3306
+   }
+ 2. Import the connection into another file
+ 3. Do a post (add a record) to your students table in the database

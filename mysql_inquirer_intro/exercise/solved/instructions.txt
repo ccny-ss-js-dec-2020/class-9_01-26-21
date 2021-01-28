@@ -1,0 +1,8 @@
+Using the inquirer and mysql Modules:
+1. get all of the records in the 'country_people' & 'students' table
+2. get the last record in the 'country_people' & 'students' table
+
+1. You will use inquirer to prompt which table you would like to view the records for
+2. After you choose which table, you will give the user a choice if they want to see all of the records or the last record added
+3. If they choose to see all the records, log all of the records
+4. If they choose to see the last record added, log the last record added
